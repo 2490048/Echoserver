@@ -21,9 +21,9 @@ Testing the server and client
 
 ## PROGRAM:
 server
-
+~~~
 import socket
-HOST, PORT = '127.0.0.1', 65432
+HOST, PORT = '127.0.0.1', 6543
 with socket.create_server((HOST, PORT)) as s:
     conn, addr = s.accept()
     with conn:
@@ -37,7 +37,7 @@ HOST, PORT = '127.0.0.1', 65432
 with socket.create_connection((HOST, PORT)) as s:
     s.sendall(b'Suriya Pravin M, 2122223230223')
     print(f'Received: {s.recv(1024)!r}')
-
+~~~~
 ## OUTPUT:
 
 1.server
