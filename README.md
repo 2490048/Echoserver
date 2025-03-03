@@ -20,47 +20,33 @@ Implementation using Python code
 Testing the server and client 
 
 ## PROGRAM:
+server
 
-1. server
-
-   import socket
-
-HOST, PORT ='127.0.0.1', 65432
-
-with socket.create_server((HOST, PORT)) as s:
-
-    conn, addr = s.accept()
-    
-    with conn:
-    
-        print(f'Connected by {addr}')
-        
-        while data := conn.recv(1024):
-        
-            conn.sendall(data)
-
-   2.clint
-
-   import socket
-
+import socket
 HOST, PORT = '127.0.0.1', 65432
+with socket.create_server((HOST, PORT)) as s:
+    conn, addr = s.accept()
+    with conn:
+        print(f'Connected by {addr}')
+        while data := conn.recv(1024):
+            conn.sendall(data)
+client
 
+  import socket
+HOST, PORT = '127.0.0.1', 65432
 with socket.create_connection((HOST, PORT)) as s:
-    
-    s.sendall(b'Rahul RP, 212224240125')
-    
+    s.sendall(b'Suriya Pravin M, 2122223230223')
     print(f'Received: {s.recv(1024)!r}')
-
 
 ## OUTPUT:
 
 1.server
-
-![{D0D6E937-7BE0-4972-8586-4C17997062BB}](https://github.com/user-attachments/assets/67dcd1c6-061f-4438-8938-066ca00e0b39)
+![server](https://github.com/user-attachments/assets/baca38c2-1f64-4a4e-9b22-3c14a4241f74)
 
 2.clint
+![client](https://github.com/user-attachments/assets/657cd151-5ef8-4fc5-b4fd-0b8d50da961d)
 
-![{FD3CC2A6-A993-412C-B37D-51F021FACF64}](https://github.com/user-attachments/assets/5ef2fbdc-9db9-4684-b5e8-3c940faefea4)
+
 
 
 
